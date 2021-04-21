@@ -3,10 +3,10 @@
 <head>
 </head>
 <body>
-	<h1>testデータから推論をします</h1>
-	<form action="/index3" method="POST" enctype="multipart/form-data">
-    		<input type="file" name="csv_file">
-    		<input type=submit value="予測結果を表示して保存">
-	</form>
+	<h1>CSVファイルから応募数合計を予測します</h1>
+    <form action="/answer" method="POST" enctype="multipart/form-data">
+    	<input type="file" name="csv_file">
+    	<input type=submit value="推論結果をダウンロード">
+    </form>
 </body>
 </html>
