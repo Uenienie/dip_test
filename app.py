@@ -31,4 +31,5 @@ def answer():
 
 #ソースが直接実行されたら中身を実行
 if __name__ == "__main__":
-    app.run(debug=True)
+	warnings.warn("use 'python -m nltk', not 'python -m nltk.downloader'",         DeprecationWarning)
+	app.run(debug=True)
