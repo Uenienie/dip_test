@@ -21,6 +21,7 @@ scipy==1.6.2
 six==1.15.0
 sklearn==0.0
 sphinx-rtd-theme==0.2.4
+sys=3.7.9
 threadpoolctl==2.1.0
 urllib3==1.26.4
 Werkzeug==1.0.1
