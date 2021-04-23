@@ -1,0 +1,3 @@
+punkt
+stopwords
+zen_to_han
