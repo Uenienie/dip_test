@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 from sklearn import preprocessing
-import re
-import mojimoji
+# import re
+# import mojimoji
 import pickle
 import warnings
 warnings.simplefilter("ignore")
