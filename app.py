@@ -1,6 +1,7 @@
 from flask import Flask,render_template, request, jsonify
 import pandas as pd
 import warnings
+warnings.simplefilter("ignore")
 import app_content.implementation as imp
 
 #Flaskオブジェクトの生成
