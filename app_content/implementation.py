@@ -4,6 +4,8 @@ from sklearn import preprocessing
 import re
 import mojimoji
 import pickle
+import warnings
+warnings.simplefilter("ignore")
 
 
 def prediction(x):
