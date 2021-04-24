@@ -25,9 +25,12 @@ def answer():
 		
 		else:
 			df = pd.read_csv(file)
-			answer = imp.prediction(df)
-			answer.to_csv("my_answer.csv", index=False)
-			return render_template("answer.html")
+			if df.shape == (len(df), 212):
+				answer = imp.prediction(df)
+				answer.to_csv("my_answer.csv", index=False)
+				return render_template("answer.html")
+			else:
+				return ("トレーニング時とデータの種類が異なります")
 
 
 #ソースが直接実行されたら中身を実行
