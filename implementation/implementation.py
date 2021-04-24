@@ -176,7 +176,7 @@ def prediction(x):
 	# ----------------------------------------------------------------------------------------------------------------
 	# 学習済みモデルを読み込み，予測
 	# ----------------------------------------------------------------------------------------------------------------
-	with open('model.pickle', mode='rb') as f:
+	with open('https://github.com/Uenienie/dip_test/blob/main/implementation/model.pickle', mode='rb') as f:
 		model = pickle.load(f)
 	
 	prediction = model.predict(x)
