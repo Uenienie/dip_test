@@ -1,1 +1,1 @@
-wordnet
+nltk.download('punkt')
