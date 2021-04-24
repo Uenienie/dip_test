@@ -31,9 +31,8 @@ def prediction(x):
 	number_attendance = [1, 2.5, 4]
 	x["attendance"] = 5.0
 	for i, j in zip (number_attendance, attendance):
-		for k in range(len(x)):
-			if (x[j][k] == 1):
-				x["attendance"][k] = i
+		index = x.loc[x[j] == 1].index
+		x["attendance"][index] = i
 	x = x.drop(attendance, axis=1)
 	
 	# 残業に関して ---------------------------------------------------------------------------------------------------
@@ -41,9 +40,8 @@ def prediction(x):
 	number_overtime = [0, 10, 20, 30]
 	x["overtime"] = 0
 	for i, j in zip (number_overtime, overtime):
-		for k in range(len(x)):
-			if (x[j][k] == 1):
-				x["overtime"][k] = i
+		index = x.loc[x[j] == 1].index
+		x["overtime"][index] = i
 	x = x.drop(overtime, axis=1)
 	
 	# 勤務時間に関して -----------------------------------------------------------------------------------------------
@@ -51,47 +49,42 @@ def prediction(x):
 	number_business_low_time = ["4", "7"]
 	x["business_low_time"] = 9
 	for i, j in zip (number_business_low_time, business_low_time):
-		for k in range(len(x)):
-			if (x[j][k] == 1):
-				x["business_low_time"][k] = i
+		index = x.loc[x[j] == 1].index
+		x["business_low_time"][index] = i
 	x = x.drop(business_low_time, axis=1)
 	
 	# 経験の有無について ---------------------------------------------------------------------------------------------
 	experience = ["未経験OK", "経験者優遇"]
 	x["experience"] = 2
-	for i in range(len(x)):
-		if ((x["未経験OK"][i] == 0) & (x["経験者優遇"][i] == 1)):
-			x["experience"][i] = 1
-		
-		elif ((x["未経験OK"][i] == 1) & (x["経験者優遇"][i] == 0)):
-			x["experience"][i] = 0
+	experience_1_index = x.loc[(x["未経験OK"] == 0) & (x["経験者優遇"] == 1)].index
+	x["experience"][experience_1_index] = 1
+	experience_0_index = x.loc[(x["未経験OK"] == 0) & (x["経験者優遇"] == 0)].index
+	x["experience"][experience_0_index] = 0
 	x = x.drop(experience, axis=1)
 	
 	# 英語力の有無について -------------------------------------------------------------------------------------------
 	english = ["英語力不要", "英語力を活かす"]
-	number_english = [0, 1, 2]
 	x["english"] = 1
-	for i, j in zip (number_english, english):
-		for k in range(len(x)):
-			if (x[j][k] == 1):
-				x["english"][k] = i
+	non_english_index = x.loc[x["英語力不要"] == 1].index
+	x["english"][non_english_index] = 0
 	x = x.drop(english, axis=1)
 	
 	# Microsoftのソフトを何種類使えるか ------------------------------------------------------------------------------
 	microsoft = ["Wordのスキルを活かす", "Excelのスキルを活かす", "PowerPointのスキルを活かす"]
 	x["microsoft"] = 0
-	for i in microsoft:
-		for j in range(len(x)):
-			if (x[i][j] == 1):
-				x["microsoft"][k] = x["microsoft"][k] + 1
+	word_index = x.loc[x["Wordのスキルを活かす"] == 1].index
+	x["microsoft"][word_index] += 1
+	excel_index = x.loc[x["Excelのスキルを活かす"] == 1].index
+	x["microsoft"][excel_index] += 1
+	power_index = x.loc[x["PowerPointのスキルを活かす"] == 1].index
+	x["microsoft"][power_index] += 1
 	x = x.drop(microsoft, axis=1)
 	
 	# 輻輳について ---------------------------------------------------------------------------------------------------
 	wear = ["制服あり", "服装自由"]
 	x["wear"] = 0
-	for i in range(len(x)):
-		if (x["服装自由"][i] == 1):
-			x["wear"][i] = 1
+	wear_index = x.loc[x["服装自由"] == 1].index
+	x["wear"][wear_index] = 1
 	x = x.drop(wear, axis=1)
 	
 	
