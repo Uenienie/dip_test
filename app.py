@@ -27,7 +27,7 @@ def answer():
 			df = pd.read_csv(file)
 			if df.shape == (len(df), 212):
 				answer = imp.prediction(df)
-				answer.to_csv("my_answer.csv", index=False)
+				answer.to_csv("answer.csv", index=False)
 				return render_template("answer.html")
 			else:
 				return ("トレーニング時とデータの種類が異なります")
