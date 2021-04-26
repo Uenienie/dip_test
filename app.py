@@ -21,7 +21,7 @@ def answer():
 		file = request.files['csv_file']
 		
 		if "csv" not in file.filename:
-			return ("csvファイルの入力をお願いします")
+			return render_template("request_csv.html")
 		
 		else:
 			df = pd.read_csv(file)
