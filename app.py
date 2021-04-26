@@ -30,7 +30,7 @@ def answer():
 				answer.to_csv("answer.csv", index=False)
 				return render_template("answer.html")
 			else:
-				return ("トレーニング時とデータの種類が異なります")
+				return render_template("request_formal.html")
 
 
 #ソースが直接実行されたら中身を実行
