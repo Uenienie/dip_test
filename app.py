@@ -11,6 +11,12 @@ app.config['JSON_AS_ASCII'] = False  # 日本語が文字化けして表示す�
 #「/」へアクセスがあった場合
 @app.route("/")
 def hello():
+	return render_template("top.html")
+
+
+#「/home」へアクセスがあった場合
+@app.route("/")
+def hello():
 	return render_template("home.html")
 
 
