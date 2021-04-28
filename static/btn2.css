@@ -1,0 +1,18 @@
+
+	span {
+		display: block;
+		color: #fff;
+		font-weight: bold;
+		font-size: 18px;
+		font-family: Ågü‡ÉSÉVÉbÉNÅh, ÅgYu GothicÅh;
+		background: #ee7800;
+		padding: 8px 0;
+		border-radius: 16px;
+		max-width: 240px;
+		text-align: center;
+		transition: .3s;
+		cursor:pointer;
+	}
+	span:hover {
+		background: #000;
+	}
