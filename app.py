@@ -15,9 +15,10 @@ def top():
 
 
 #「/home」へアクセスがあった場合
-@app.route("/home")
+@app.route("/home", methods=["GET", "POST"])
 def home():
-	return render_template("home.html")
+	if request.method == "POST"
+		return render_template("home.html")
 
 
 #「/answer」へアクセスがあった場合
