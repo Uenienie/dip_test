@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="jp">
 <head>
+	<style>
+		body{
+		background: #eeeeee;
+    		}
+	</style>
 </head>
 <body>
-	<h1>CSVファイルから応募数合計を予測します</h1>
-    <form action="/answer" method="POST" enctype="multipart/form-data">
-    	<input type="file" name="csv_file">
-    	<input type=submit value="推論結果をダウンロード">
-    </form>
+	<div>
+		<h1>テストデータを選択して下さい</h1>
+		<link rel="stylesheet" href="./../static/h1.css">
+		<form action="/answer" method="POST" enctype="multipart/form-data">
+			<link rel="stylesheet" type="text/css" href="./../static/btn.css">
+			<input type="file" name="csv_file">
+			<input type=submit value="推論結果をダウンロード">
+		</form>
+	</div>
 </body>
 </html>
