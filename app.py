@@ -34,8 +34,8 @@ def answer():
 			df = pd.read_csv(file)
 			if df.shape == (len(df), 212):
 				answer = imp.prediction(df)
-				answer.to_csv("answer.csv", index=False)
-				return render_template("answer.html")
+				#answer.to_csv("answer.csv", index=False)
+				return render_template("answer.html", file=answer)
 			else:
 				return render_template("request_formal.html")
 
