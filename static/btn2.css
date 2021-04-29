@@ -1,18 +1,20 @@
 
-	span {
+	btn2 {
+		position: absolute;
+		bottom: 50%;
+		left: 40%;
+		right: 40%;
 		display: block;
 		color: #fff;
 		font-weight: bold;
-		font-size: 18px;
-		font-family: gŸàƒSƒVƒbƒNh, gYu Gothich;
-		background: #ee7800;
+		font-size: 0.5em;
+		font-family: â€œæ¸¸ã‚´ã‚·ãƒƒã‚¯â€, â€œYu Gothicâ€;
+		background: #778899;
 		padding: 8px 0;
 		border-radius: 16px;
-		max-width: 240px;
+		max-width: 30%;
+		max-height: 20%;
 		text-align: center;
 		transition: .3s;
 		cursor:pointer;
-	}
-	span:hover {
-		background: #000;
 	}
