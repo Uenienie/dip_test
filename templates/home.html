@@ -4,6 +4,7 @@
 	<style>
 		body{
 		background: #eeeeee;
+		font-family: Meiryo;
     		}
 	</style>
 </head>
@@ -11,13 +12,13 @@
 	<div>
 		<link rel="stylesheet"  type="text/css" href="./../static/h1.css">
 		<h1 style="font-size: 2.5em">テストデータを入力して下さい</h1>
-		<form action="/answer" method="POST" enctype="multipart/form-data">
-			<btn2>
+		<btn2>
+			<form action="/answer" method="POST" enctype="multipart/form-data">
 				<link rel="stylesheet" type="text/css" href="./../static/btn2.css">
 				<input type="file" name="csv_file">
 				<input type=submit value="推論結果をダウンロード">
-			</btn2>
-		</form>
+			</form>
+		</btn2>
 	</div>
 </body>
 </html>
